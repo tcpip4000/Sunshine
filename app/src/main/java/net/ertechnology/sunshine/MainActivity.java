@@ -71,7 +71,7 @@ public class MainActivity extends ActionBarActivity {
                     "Sun - In the pool - 35/56",
                     "Mon - Workworkwork - 45/56",
             };
-
+            //http://api.openweathermap.org/data/2.5/forecast/daily?id=3687925&mode=xml&units=metric&cnt=7
             //ArrayList<String> weekForecast = new ArrayList<String>(Array.asList(forecastArray));
 
             ArrayAdapter<String> mForecastAdapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item_forecast, R.id.list_item_forecast_textview, weekForecast);
