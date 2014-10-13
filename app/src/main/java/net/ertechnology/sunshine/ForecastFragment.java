@@ -4,8 +4,10 @@ package net.ertechnology.sunshine;
  * Created by Juan on 28/09/2014.
  */
 
+import android.annotation.TargetApi;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -84,7 +86,7 @@ public class ForecastFragment extends Fragment {
                 //http://api.openweathermap.org/data/2.5/forecast/daily?id=3687925&mode=json&units=metric&cnt=7
 
                 final String FORECAST_BASE_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?";
-                final String QUERY_PARAM = "q";
+                final String QUERY_PARAM = "id";
                 final String MODE_PARAM = "mode";
                 final String UNITS_PARAM = "units";
                 final String COUNT_PARAM = "cnt";
@@ -233,11 +235,15 @@ public class ForecastFragment extends Fragment {
 
             return resultStrs;
         }
+        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
         @Override
         protected void onPostExecute(String[] result) {
             if (result != null) {
                 mForecastAdapter.clear();
                 mForecastAdapter.addAll(result);
+                /*for (String dayForecast : result) {
+                    mForecastAdapter.add(dayForecast);
+                }*/
             }
         }
     }
@@ -262,7 +268,7 @@ public class ForecastFragment extends Fragment {
         int id = item.getItemId();
         if (id == R.id.action_refresh) {
             FetchWeatherTask weatherTask = new FetchWeatherTask();
-            weatherTask.execute("94043");
+            weatherTask.execute("3687925");
             return true;
         }
         return super.onOptionsItemSelected(item);
