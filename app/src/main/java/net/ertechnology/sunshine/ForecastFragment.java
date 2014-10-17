@@ -4,8 +4,10 @@ package net.ertechnology.sunshine;
  * Created by Juan on 28/09/2014.
  */
 
+import android.annotation.TargetApi;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -233,6 +235,7 @@ public class ForecastFragment extends Fragment {
 
             return resultStrs;
         }
+        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
         @Override
         protected void onPostExecute(String[] result) {
             if (result != null) {
