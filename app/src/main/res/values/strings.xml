@@ -7,4 +7,11 @@
     <string name="action_refresh" translatable="false">Refresh</string>
     <string name="title_activity_detail">DetailActivity</string>
 
+    <!-- [CHAR LIMIT=30] -->
+    <string name="pref_location_key">location</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="pref_location_label" translatable="false">Location</string>
+    <!-- [CHAR LIMIT=NONE] -->
+    <string name="pref_location_default" translatable="false">3687925</string>
+
 </resources>
