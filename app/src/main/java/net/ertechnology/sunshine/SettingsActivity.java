@@ -83,5 +83,6 @@ public class SettingsActivity extends PreferenceActivity
             addPreferencesFromResource(R.xml.pref_general);
             findPreference(getString(R.string.pref_location_key));
         }
+
     }
 }

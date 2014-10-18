@@ -13,5 +13,7 @@
     <string name="pref_location_label" translatable="false">Location</string>
     <!-- [CHAR LIMIT=NONE] -->
     <string name="pref_location_default" translatable="false">3687925</string>
+    <string name="pref_system_label">System</string>
+    <string name="pref_system_type_default">metric</string>
 
 </resources>

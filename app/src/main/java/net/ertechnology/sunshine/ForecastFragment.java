@@ -94,7 +94,7 @@ public class ForecastFragment extends Fragment {
             String forecastJsonStr = null;
 
             String mode = "json";
-            String units = "metric";
+            //String units = "metric";
             int numDays = 7;
 
             try {
@@ -109,7 +109,7 @@ public class ForecastFragment extends Fragment {
                 Uri builtUri = Uri.parse(FORECAST_BASE_URL).buildUpon()
                         .appendQueryParameter(QUERY_PARAM, params[0])
                         .appendQueryParameter(MODE_PARAM, mode)
-                        .appendQueryParameter(UNITS_PARAM, units)
+                        .appendQueryParameter(UNITS_PARAM, params[1])
                         .appendQueryParameter(COUNT_PARAM, Integer.toString(numDays)).build();
 
                 Log.v(LOG_TAG, "URI: " + builtUri.toString());
@@ -292,8 +292,8 @@ public class ForecastFragment extends Fragment {
         FetchWeatherTask weatherTask = new FetchWeatherTask();
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String locationPref = sharedPref.getString(getString(R.string.pref_location_key), getString(R.string.pref_location_default));
-        weatherTask.execute(locationPref);
+        String systemPref = sharedPref.getString("pref_system", getString(R.string.pref_system_type_default));
+        weatherTask.execute(locationPref, systemPref);
     }
-
 
 }
