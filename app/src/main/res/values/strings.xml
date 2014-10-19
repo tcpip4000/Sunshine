@@ -15,5 +15,7 @@
     <string name="pref_location_default" translatable="false">3687925</string>
     <string name="pref_system_label">System</string>
     <string name="pref_system_type_default">metric</string>
+    <string name="action_map">Map Location</string>
+    <string name="my_menu_shared_title">Share</string>
 
 </resources>
