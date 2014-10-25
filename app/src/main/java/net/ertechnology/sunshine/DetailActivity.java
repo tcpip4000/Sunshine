@@ -40,7 +40,7 @@ public class DetailActivity extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         MenuItem menuItem = menu.findItem(R.id.my_menu_item);
         // Get the provider and hold onto it to set/change the share intent.
-        ShareActionProvider mShareActionProvider = (ShareActionProvider) menuItem.getActionProvider();
+        //ShareActionProvider mShareActionProvider = (ShareActionProvider) menuItem.getActionProvider();
         // Set history different from the default before getting the action
         // view since a call to MenuItem.getActionView() calls
         // onCreateActionView() which uses the backing file name. Omit this

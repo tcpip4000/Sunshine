@@ -95,7 +95,7 @@ public class ForecastFragment extends Fragment {
 
             String mode = "json";
             //String units = "metric";
-            int numDays = 7;
+            int numDays = 10;
 
             try {
                 //http://api.openweathermap.org/data/2.5/forecast/daily?id=3687925&mode=json&units=metric&cnt=7

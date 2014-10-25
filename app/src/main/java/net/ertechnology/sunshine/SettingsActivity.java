@@ -30,14 +30,14 @@ public class SettingsActivity extends PreferenceActivity
         super.onCreate(savedInstanceState);
         // Add 'general' preferences, defined in the XML file
 
-        //addPreferencesFromResource(R.xml.pref_general); // This api is deprecated
-        MyPreferenceFragment myPref = new MyPreferenceFragment();
-        getFragmentManager().beginTransaction().replace(android.R.id.content, myPref).commit();
+        addPreferencesFromResource(R.xml.pref_general); // This api is deprecated
+        //MyPreferenceFragment myPref = new MyPreferenceFragment();
+        //getFragmentManager().beginTransaction().replace(android.R.id.content, myPref).commit();
 
         // For all preferences, attach an OnPreferenceChangeListener so the UI summary can be
         // updated when the preference changes.
         // TODO: Add preferences
-        //bindPreferenceSummaryToValue(myPref.findPreference(getString(R.string.pref_location_key))); // This api is deprecated
+        bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_location_key))); // This api is deprecated
     }
 
     /**
@@ -76,7 +76,7 @@ public class SettingsActivity extends PreferenceActivity
         return true;
     }
 
-
+    /*
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static class MyPreferenceFragment extends PreferenceFragment {
         @Override
@@ -86,6 +86,6 @@ public class SettingsActivity extends PreferenceActivity
             findPreference(getString(R.string.pref_location_key));
         }
 
-    }
+    */
 
 }
